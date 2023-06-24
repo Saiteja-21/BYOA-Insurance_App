@@ -24,7 +24,7 @@ export const adminSignup=async(req,res)=>{
     try{
         const existUser= await Admin.findOne({email});
         if(existUser){
-            res.send('admin exists')
+            res.json({message:'admin exists'})
             return
         }
         

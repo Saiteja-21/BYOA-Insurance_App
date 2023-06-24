@@ -13,11 +13,13 @@ db.once('open',()=>{
 })
 import clientRoute from './routes/client.js'
 import adminRoute from './routes/admin.js';
-import userRoute from './routes/user.js'
+import userRoute from './routes/user.js';
+import requestRoute from './routes/requests.js'
 
 app.use('/client',clientRoute);
 app.use('/admin',adminRoute);
 app.use('/user',userRoute);
+app.use('/requests',requestRoute)
 
 app.listen(port,()=>{
     console.log('server started at 8000')

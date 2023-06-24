@@ -54,7 +54,7 @@ export const userLogin=async(req,res)=>{
         let verify=await bcrypt.compare(password,exist.password);
         if(verify){
             let token=jwt.sign({email},secret);
-            res.json({token});
+            res.json({token,hospital:exist.hospitalName});
             return
 
         }

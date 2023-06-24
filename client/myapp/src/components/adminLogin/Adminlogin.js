@@ -6,12 +6,15 @@ import './Adminlogin.css'
 import Button from '@mui/material/Button';
 import Avatar from '@mui/material/Avatar';
 import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
+import loginimage from '../images/undraw_unlock_re_a558.svg';
+import { useNavigate } from 'react-router-dom';
 
 const service='http://localhost:8000'
 
 function Signup() {
     const [email,setemail]=useState('')
     const [password,setpassword]=useState('')
+    const navigate=useNavigate();
 
     const handlelogin=async()=>{
         let obj={
@@ -29,6 +32,8 @@ function Signup() {
         console.log(data.token)
         if(data.token){
             localStorage.setItem('token',data.token)
+            navigate('/adminpage')
+            
         }
         else{
             window.alert(data.message)
@@ -40,9 +45,16 @@ function Signup() {
 
   return (
     <div className='card'>
-      <Card sx={{width:'300px',height:'350px',display:'flex',justifyContent:'center',flexDirection:'column'}}>
+      <Card sx={{width:'800px',height:'600px',display:'flex',justifyContent:'center'}}>
+        <Box  sx={{width:'50%',backgroundColor:'#EFE2BA',margin:'15px 15px 15px 15px',borderRadius:'8px' ,display:'flex',justifyContent:'center'}}>
+
+         <img src={loginimage} alt='no'/>
+        </Box>
+        <Box sx={{height:'600px',display:'flex',justifyContent:'center',flexDirection:'column',width:'50%'}}>
+
+      
         <Box align='center'>
-        <Avatar><PersonOutlineIcon/></Avatar>
+        <Avatar sx={{backgroundColor:'#4056A1'}}><PersonOutlineIcon/></Avatar>
         <h2>Login in as admin</h2>
 
         </Box>
@@ -56,7 +68,9 @@ function Signup() {
     
       <br/>
       <br/>
-      <Button variant="contained" onClick={handlelogin}>login</Button>
+      <Button variant="contained" onClick={handlelogin} sx={{width:'300px',backgroundColor:'#F13C20','&:hover': {
+          backgroundColor: 'red',
+        },}}>login</Button>
       <br/>
       <a href='/signup'>go to signin</a>
       <br/>
@@ -65,7 +79,7 @@ function Signup() {
       </Box>
     
       
-
+      </Box>
       </Card>
       
     </div>

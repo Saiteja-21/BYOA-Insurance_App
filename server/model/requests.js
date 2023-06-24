@@ -1,6 +1,6 @@
 import mongoose, { mongo } from "mongoose";
 
-const ClientSchema=mongoose.Schema({
+const RequestSchema=mongoose.Schema({
     name:{
         type: String,
         required:true
@@ -32,9 +32,11 @@ const ClientSchema=mongoose.Schema({
     admitted_in:{
         type:String,
         default:'none'
-    }
-    
+    },
+    bill:{
+        type:Number
+    }    
 
 })
 
-export default mongoose.model('clients',ClientSchema)
+export default mongoose.model('requests',RequestSchema)

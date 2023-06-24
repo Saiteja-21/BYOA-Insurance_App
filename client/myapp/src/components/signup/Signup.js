@@ -9,6 +9,7 @@ import LockIcon from '@mui/icons-material/Lock';
 import Radio from '@mui/material/Radio';
 import Login from '../login/Login.js'
 import { useNavigate } from 'react-router-dom';
+import signupimage from '../images/undraw_authentication.svg'
 
 
 const service='http://localhost:8000'
@@ -98,9 +99,15 @@ function Signup() {
   });
   return (
     <div className='card'>
-      <Card sx={{width:'300px',height:'500px',display:'flex',justifyContent:'center',flexDirection:'column'}}>
+      <Card sx={{width:'800px',height:'600px',display:'flex',justifyContent:'space-around' }}>
+        <Box sx={{width:'50%',backgroundColor:'#EFE2BA',margin:'15px 15px 15px 15px',borderRadius:'8px' ,display:'flex',justifyContent:'center'}}>
+         <img src={signupimage} alt='no'/>
+         
+
+        </Box>
+        <Box sx={{height:'600px',display:'flex',justifyContent:'center',flexDirection:'column',width:'50%'}}>
         <Box align='center'>
-        <Avatar><LockIcon/></Avatar>
+        <Avatar sx={{backgroundColor:'#4056A1'}}><LockIcon /></Avatar>
         <h2>Sign in</h2>
 
         </Box>
@@ -108,28 +115,46 @@ function Signup() {
         
       
       <Box align='center'>
-      <Radio {...controlProps('a')} size="small" onClick={(e)=>setadmin(true)} />
+      <Radio {...controlProps('a')} sx={{ '& .MuiSvgIcon-root': { color: '#F13C20' } }} size="small" onClick={(e)=>setadmin(true)} />
       admin
-      <Radio {...controlProps('b')}  size="small" onClick={(e)=>setadmin(false)} />
+      <Radio {...controlProps('b')}  sx={{ '& .MuiSvgIcon-root': { color: '#F13C20' } }} size="small" onClick={(e)=>setadmin(false)} />
       user
       <br/> 
       {
         admin&& <TextField id="standard-basic" label="security code" variant="standard"  onChange={(e)=>setsecuritycode(e.target.value)}/>
       }
+      <br/>
+      <br/>
       
       <TextField id="standard-basic" label="name" variant="standard"  onChange={(e)=>setname(e.target.value)}/>
+      <br/>
+      <br/>
       <TextField id="standard-basic" label="email" variant="standard" onChange={(e)=>setemail(e.target.value)} />
+      <br/>
+      <br/>
       <TextField id="standard-basic" label="password" variant="standard"  onChange={(e)=>setpassword(e.target.value)}/>
       {
-        !admin&& <TextField id="standard-basic" label="hospital name" variant="standard" onChange={(e)=>sethospital(e.target.value)} />
+        !admin&&  <TextField id="standard-basic" label="hospital name" variant="standard" onChange={(e)=>sethospital(e.target.value)} />
+      
 
       }
+      <br/>
+      <br/>
       <TextField id="standard-basic" label="contact" variant="standard"  onChange={(e)=>setcontact(e.target.value)}/>
       <br/>
       <br/>
-      <Button variant="contained" onClick={handlesignup}>signup</Button>
+      <Button variant="contained" sx={{width:'300px',backgroundColor:'#F13C20','&:hover': {
+          backgroundColor: 'red',
+        },}} onClick={handlesignup}>signup</Button>
      
       </Box>
+      
+     
+
+      </Box>
+    
+     
+     
       
 
       </Card>

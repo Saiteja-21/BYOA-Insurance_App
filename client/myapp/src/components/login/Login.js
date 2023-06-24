@@ -6,6 +6,8 @@ import './Login.css'
 import Button from '@mui/material/Button';
 import Avatar from '@mui/material/Avatar';
 import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
+import { useNavigate } from 'react-router-dom';
+import loginimage from '../images/undraw_login.svg'
 
 const service='http://localhost:8000'
 
@@ -14,6 +16,7 @@ const service='http://localhost:8000'
 function Signup() {
     const [email,setemail]=useState('')
     const [password,setpassword]=useState('')
+    const navigate=useNavigate()
 
     const handlelogin=async()=>{
         let obj={
@@ -30,7 +33,9 @@ function Signup() {
         const data=await response.json();
         console.log(data.token)
         if(data.token){
-            localStorage.setItem('token',data.token)
+            localStorage.setItem('token',data.token);
+            localStorage.setItem('hospital',data.hospital)
+            navigate('/users')
         }
         else{
             window.alert(data.message)
@@ -41,9 +46,16 @@ function Signup() {
 
   return (
     <div className='card'>
-      <Card sx={{width:'300px',height:'350px',display:'flex',justifyContent:'center',flexDirection:'column'}}>
+      
+
+     
+      <Card sx={{width:'800px',height:'600px',display:'flex',justifyContent:'center'}}>
+        <Box sx={{width:'50%',backgroundColor:'#EFE2BA',margin:'15px 15px 15px 15px',borderRadius:'8px' ,display:'flex',justifyContent:'center'}}>
+        <img src={loginimage} alt='no'/>
+        </Box>
+        <Box  sx={{height:'600px',display:'flex',justifyContent:'center',flexDirection:'column',width:'50%'}}>
         <Box align='center'>
-        <Avatar><PersonOutlineIcon/></Avatar>
+        <Avatar sx={{backgroundColor:'#4056A1'}}><PersonOutlineIcon/></Avatar>
         <h2>Login in as user</h2>
 
         </Box>
@@ -53,21 +65,31 @@ function Signup() {
       <Box align='center'>
     
       <TextField id="standard-basic" label="email" variant="standard" onChange={(e)=>setemail(e.target.value)} />
+      <br/>
+      <br/>
       <TextField id="standard-basic" label="password" variant="standard" onChange={(e)=>setpassword(e.target.value)}/>
     
       <br/>
       <br/>
-      <Button variant="contained" onClick={handlelogin}>login</Button>
       <br/>
-      <a href='/signup'>go to signin</a>
-      <br/>
-      <a href='/adminlogin'>admin login</a>
+      <Button variant="contained" sx={{width:'300px',backgroundColor:'#F13C20','&:hover': {
+          backgroundColor: 'red',
+        },}} onClick={handlelogin}>Login</Button>
+
+</Box>
+        <Box align='center'>
+       <p>Don't have an account?<a href='/signup'>Signup</a></p>
+       <p><a href='/adminlogin'>Admin</a></p>
+
+        </Box>
      
-      </Box>
-    
+     
       
+    
+      </Box>
 
       </Card>
+     
       
     </div>
   )
