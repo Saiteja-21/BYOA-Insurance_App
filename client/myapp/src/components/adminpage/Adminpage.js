@@ -6,6 +6,8 @@ import Card from '@mui/material/Card';
 import { Button } from '@mui/material';
 import DeleteForeverOutlinedIcon from '@mui/icons-material/DeleteForeverOutlined';
 import { useNavigate } from 'react-router-dom';
+import Navbar from '../navbar/Navbar.js'
+import Avatar from '@mui/material/Avatar';
 
 const service='http://localhost:8000'
 
@@ -42,27 +44,49 @@ function Adminpage() {
               'Content-Type': 'application/json',
             },
           });
+          
           setusers((users)=>users.filter((user)=>user._id!=id))
 
 
     }
-    const request=()=>{
-      navigate('/requests')
-    }
+   
   return (
     <div>
-        <Button variant="contained" sx={{width:'100px',backgroundColor:'#F13C20', float:'right',marginRight:"20px",marginTop:'20px','&:hover': {
+      <Navbar/>
+        {/* <Button variant="contained" sx={{width:'100px',backgroundColor:'#F13C20', float:'right',marginRight:"20px",marginTop:'20px','&:hover': {
           backgroundColor: 'red',
-        },}} onClick={request}>Requests</Button>
-        <Grid container  my={12} spacing={2}>
+        },}} onClick={request}>Requests</Button> */}
+        <Grid container  my={2} spacing={2}>
             {
                 users.map((user)=>{
                     return(
-                        <Grid item xs={2}>
-                            <Card sx={{display:'flex',justifyContent:'center',backgroundColor:'#C5CBE3'}}>
+                      <Grid item xs={12} sm={6} md={4} lg={3} key={user.id}>
+                      <Card
+                 sx={{
+                   display: 'flex',
+                   justifyContent: 'center',
+                   backgroundColor: '#C5CBE3',
+                   cursor: 'pointer',
+                   width: '100%',
+                   '@media (min-width: 600px)': {
+                     width: '80%',
+                   },
+                   '@media (min-width: 960px)': {
+                     width: '70%',
+                   },
+                   '@media (min-width: 1280px)': {
+                     width: '90%',
+                   },
+                 }}
+                 
+               >
                             <Box sx={{width:'100%'}}>
-                                <button onClick={()=>handledelete(user._id)}>  <DeleteForeverOutlinedIcon sx={{float:'right',marginRight:'2px'}}  /> 
-                                 </button>
+                              <Button onClick={()=>handledelete(user._id)}>
+                              <Avatar sx={{backgroundColor:'#4056A1'}} ><DeleteForeverOutlinedIcon sx={{float:'right',marginRight:'2px'}}  /> </Avatar> 
+
+                              </Button>
+                             
+                                 
                            
                                 <p>Name:{user.name}</p>
                                 <p>Email:{user.email}</p>

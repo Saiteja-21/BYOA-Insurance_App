@@ -6,3 +6,18 @@ h3{
     float: right;
     margin-right: 20px;
 }
+input{
+    height:30px;
+    border-radius: 5px;
+    border: none;
+    margin-top: 60px;
+    margin-left: 530px;
+    width: 500px;
+    
+}
+.search-input {
+    width: 100%;
+    max-width: 300px; /* Adjust the maximum width as needed */
+    padding: 8px;
+    margin-top: 20px;
+  }

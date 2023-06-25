@@ -72,9 +72,21 @@ function Signup() {
           backgroundColor: 'red',
         },}}>login</Button>
       <br/>
-      <a href='/signup'>go to signin</a>
-      <br/>
-      <a href='/'>user login</a>
+      <Box  sx={{marginLeft:'50px'}}>
+        <span style={{ display: 'flex', alignItems: 'center' }}>
+  <p style={{ marginRight: '10px' }}>Don't have an account?</p>
+  <a style={{ marginLeft: '5px' }} href='/signup'>Signup</a>
+</span>
+      
+       
+
+
+         
+     
+        </Box>
+        <Box sx={{marginRight:"120px",display:'flex',justifyContent:"center",width:'200px'}}>
+        <p><a href='/adminlogin'>Userlogin</a></p>
+        </Box>
      
       </Box>
     

@@ -26,6 +26,7 @@ function Users() {
     const [user2,setuser2]=useState();
     const [updateduser,setupdateduser]=useState({});
     const [amount,setamount]=useState();
+    const [search,setsearch]=useState('')
     const navigate=useNavigate()
 
 
@@ -56,7 +57,7 @@ function Users() {
         };
     
         fetchData();
-      }, []);
+      }, [users]);
       const [open, setOpen] = React.useState(false);
       const [fullWidth, setFullWidth] = React.useState(true);
       const [maxWidth, setMaxWidth] = React.useState('sm');
@@ -119,12 +120,17 @@ function Users() {
       
 
     }
+    const filtered=users.filter((element)=>element.name.includes(search));
+ 
 
   return (
     <div>
      <Button variant="contained" sx={{width:'100px', float:'right',marginRight:"20px",marginTop:'20px','&:hover': {
           backgroundColor: 'red',
         },}} onClick={handlelogout}><span>Logout</span></Button>
+
+<input type='text' className='search-input' placeholder='search user' onChange={(e)=>setsearch(e.target.value)}/>
+
       {
       token?
  <Grid container my={12} spacing={2} >
@@ -132,10 +138,28 @@ function Users() {
         {
          
          
-            users.map((user)=>{
+            filtered.map((user)=>{
                 return(
-                  <Grid item xs={3} >
-                    <Card sx={{display:'flex',justifyContent:"center",backgroundColor:'#C5CBE3'}} onClick={dialog}>
+                  <Grid item xs={12} sm={6} md={4} lg={3} key={user.id}>
+                     <Card
+                sx={{
+                  display: 'flex',
+                  justifyContent: 'center',
+                  backgroundColor: '#C5CBE3',
+                  cursor: 'pointer',
+                  width: '100%',
+                  '@media (min-width: 600px)': {
+                    width: '80%',
+                  },
+                  '@media (min-width: 960px)': {
+                    width: '70%',
+                  },
+                  '@media (min-width: 1280px)': {
+                    width: '90%',
+                  },
+                }}
+                
+              >
                       <Box >
                       <p>Name: {user.name}</p>
                       <p>Email: {user.email}</p>

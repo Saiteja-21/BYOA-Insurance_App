@@ -5,6 +5,7 @@ import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import { Button } from '@mui/material';
+import Navbar from '../navbar/Navbar.js';
 
 
 const service='http://localhost:8000'
@@ -70,8 +71,9 @@ function Requests() {
     
   return (
     <div>
+      <Navbar/>
          
-        <Grid container  my={12} spacing={2}>
+        <Grid container  my={2} spacing={2}>
             {
                 users.map((user)=>{
                     return(

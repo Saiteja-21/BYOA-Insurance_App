@@ -77,10 +77,20 @@ function Signup() {
         },}} onClick={handlelogin}>Login</Button>
 
 </Box>
-        <Box align='center'>
-       <p>Don't have an account?<a href='/signup'>Signup</a></p>
-       <p><a href='/adminlogin'>Admin</a></p>
+        <Box  sx={{marginLeft:'50px'}}>
+        <span style={{ display: 'flex', alignItems: 'center' }}>
+  <p style={{ marginRight: '10px' }}>Don't have an account?</p>
+  <a style={{ marginLeft: '5px' }} href='/signup'>Signup</a>
+</span>
+      
+       
 
+
+         
+     
+        </Box>
+        <Box sx={{marginRight:"120px",display:'flex',justifyContent:"center",width:'200px'}}>
+        <p><a href='/adminlogin'>Adminlogin</a></p>
         </Box>
      
      
