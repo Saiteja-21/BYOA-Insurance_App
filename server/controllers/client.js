@@ -40,7 +40,6 @@ export const addClient=async(req,res)=>{
 }
 
 export const getclients=async(req,res)=>{
-
     const data=await User.find();
     res.json(data);
 
