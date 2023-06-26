@@ -27,17 +27,19 @@ function Users() {
     const [updateduser,setupdateduser]=useState({});
     const [amount,setamount]=useState();
     const [search,setsearch]=useState('')
+    
     const navigate=useNavigate()
 
 
     const handlelogout=()=>{
-      localStorage.setItem('token',"");
+      localStorage.clear();
       navigate('/')
     }
     const dialog=()=>{
 
     }
     useEffect(() => {
+      console.log('in useeffect')
         const fetchData = async () => {
           try {
             const response = await fetch(service + '/client/get', {
@@ -48,8 +50,12 @@ function Users() {
             });
     
             const data = await response.json();
-            setusers(data);
+           
+            
+              setusers(data);
             console.log(data);
+            
+            
             console.log('1werfgb');
           } catch (error) {
             console.error('Error fetching data:', error);

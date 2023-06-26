@@ -10,15 +10,19 @@ import Requests from './components/adminpage/Requests';
 
 
 function App() {
+  
+  
   return (
     <BrowserRouter>
     <Routes>
     <Route path='/' Component={Login}/>
     <Route path='/adminlogin' Component={Adminlogin}/>
     <Route path='/signup' Component={Signup}/>
-    <Route path='/users' Component={users}/>
+     <Route path='/users' Component={users}/>
     <Route path='/adminpage' Component={Adminpage}/>
     <Route path='/requests' Component={Requests}/>
+    
+   
       
     </Routes>
    

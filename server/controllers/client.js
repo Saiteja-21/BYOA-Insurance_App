@@ -1,4 +1,8 @@
 import User from '../model/clients.js';
+import jwt from 'jsonwebtoken'
+import 'dotenv/config';
+
+const secret=process.env
 
 export const addClient=async(req,res)=>{
     console.log('1')
@@ -36,6 +40,7 @@ export const addClient=async(req,res)=>{
 }
 
 export const getclients=async(req,res)=>{
+
     const data=await User.find();
     res.json(data);
 

@@ -49,6 +49,9 @@ export const userSignup=async(req,res)=>{
 
 export const userLogin=async(req,res)=>{
     const {email,password}=req.body;
+    if(!email || !password){
+        res.json({message:'enter all details'})
+    }
     const exist=await User.findOne({email:email})
     if(exist){
         let verify=await bcrypt.compare(password,exist.password);

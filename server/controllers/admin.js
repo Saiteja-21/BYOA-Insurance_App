@@ -49,6 +49,9 @@ export const adminSignup=async(req,res)=>{
 
 export const adminLogin=async(req,res)=>{
     const {email,password}=req.body;
+    if(!email || !password){
+        res.json({message:'enter all details'})
+    }
     const exist=await Admin.findOne({email:email})
     
     if(exist){

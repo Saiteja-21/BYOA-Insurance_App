@@ -10,9 +10,10 @@ import Navbar from '../navbar/Navbar.js'
 import Avatar from '@mui/material/Avatar';
 
 const service='http://localhost:8000'
-
+const token=localStorage.getItem('token')
 function Adminpage() {
     const [users,setusers]=useState([]);
+    
     const navigate=useNavigate();
 
 
@@ -24,11 +25,17 @@ function Adminpage() {
               headers: {
                 'Content-Type': 'application/json',
               },
+              
             });
 
-            const data = await response.json();
-            setusers(data);
-            console.log(data);
+            const data2 = await response.json();
+           
+             
+              setusers(data2);
+              console.log(data2);
+            
+           
+      
             console.log('1werfgb');
           } catch (error) {
             console.error('Error fetching data:', error);
@@ -52,6 +59,7 @@ function Adminpage() {
    
   return (
     <div>
+    
       <Navbar/>
         {/* <Button variant="contained" sx={{width:'100px',backgroundColor:'#F13C20', float:'right',marginRight:"20px",marginTop:'20px','&:hover': {
           backgroundColor: 'red',
