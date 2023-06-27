@@ -18,7 +18,7 @@ import Select from '@mui/material/Select';
 import Switch from '@mui/material/Switch';
 import TextField from '@mui/material/TextField';
 
-const service='http://localhost:8000'
+const service='https://insurance-app-1rvb.onrender.com'
 const token=localStorage.getItem('token')
 
 function Users() {

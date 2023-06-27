@@ -8,7 +8,7 @@ import { Button } from '@mui/material';
 import Navbar from '../navbar/Navbar.js';
 
 
-const service='http://localhost:8000'
+const service='https://insurance-app-1rvb.onrender.com'
 
 
 function Requests() {

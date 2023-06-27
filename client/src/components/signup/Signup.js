@@ -12,7 +12,7 @@ import { useNavigate } from 'react-router-dom';
 import signupimage from '../images/undraw_authentication.svg'
 
 
-const service='http://localhost:8000'
+const service='https://insurance-app-1rvb.onrender.com'
 function Signup() {
   const [selectedValue, setSelectedValue] = React.useState('a');
   const [admin,setadmin]=useState(true);

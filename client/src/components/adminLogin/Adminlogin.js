@@ -9,7 +9,7 @@ import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 import loginimage from '../images/undraw_unlock_re_a558.svg';
 import { useNavigate } from 'react-router-dom';
 
-const service='http://localhost:8000'
+const service='https://insurance-app-1rvb.onrender.com'
 
 function Signup() {
     const [email,setemail]=useState('')

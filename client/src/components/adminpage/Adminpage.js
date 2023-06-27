@@ -9,7 +9,7 @@ import { useNavigate } from 'react-router-dom';
 import Navbar from '../navbar/Navbar.js'
 import Avatar from '@mui/material/Avatar';
 
-const service='http://localhost:8000'
+const service='https://insurance-app-1rvb.onrender.com'
 const token=localStorage.getItem('token')
 function Adminpage() {
     const [users,setusers]=useState([]);

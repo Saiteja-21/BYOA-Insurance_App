@@ -10,7 +10,7 @@ import { useNavigate } from 'react-router-dom';
 import loginimage from '../images/undraw_login.svg'
 import Navbar from '../navbar/Navbar.js'
 
-const service='http://localhost:8000'
+const service='https://insurance-app-1rvb.onrender.com'
 
 
 
