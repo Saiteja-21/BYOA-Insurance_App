@@ -32,7 +32,7 @@ function Signup() {
         console.log(data.token)
         if(data.token){
             localStorage.setItem('token',data.token)
-            navigate('/BYOA-Insurance_App/adminpage')
+            navigate('/adminpage')
             
         }
         else{
@@ -75,7 +75,7 @@ function Signup() {
       <Box  sx={{marginLeft:'50px'}}>
         <span style={{ display: 'flex', alignItems: 'center' }}>
   <p style={{ marginRight: '10px' }}>Don't have an account?</p>
-  <a style={{ marginLeft: '5px' }} href='/BYOA-Insurance_App/signup'>Signup</a>
+  <p style={{ marginLeft: '5px' }} onClick={()=>navigate('/signup')}>Signup</p>
 </span>
       
        
@@ -85,7 +85,7 @@ function Signup() {
      
         </Box>
         <Box sx={{marginRight:"120px",display:'flex',justifyContent:"center",width:'200px'}}>
-        <p><a href='/BYOA-Insurance_App/adminlogin'>Userlogin</a></p>
+        <p onClick={()=>navigate('/adminlogin')}>Userlogin</p>
         </Box>
      
       </Box>

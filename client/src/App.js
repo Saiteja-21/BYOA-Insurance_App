@@ -15,12 +15,12 @@ function App() {
   return (
     <BrowserRouter>
     <Routes>
-    <Route path='/BYOA-Insurance_App/' Component={Login}/>
-    <Route path='/BYOA-Insurance_App/adminlogin' Component={Adminlogin}/>
-    <Route path='/BYOA-Insurance_App/signup' Component={Signup}/>
-     <Route path='/BYOA-Insurance_App/users' Component={users}/>
-    <Route path='/BYOA-Insurance_App/adminpage' Component={Adminpage}/>
-    <Route path='/BYOA-Insurance_App/requests' Component={Requests}/>
+    <Route path='/' Component={Login}/>
+    <Route path='/adminlogin' Component={Adminlogin}/>
+    <Route path='/signup' Component={Signup}/>
+     <Route path='/users' Component={users}/>
+    <Route path='/adminpage' Component={Adminpage}/>
+    <Route path='/requests' Component={Requests}/>
     
    
       

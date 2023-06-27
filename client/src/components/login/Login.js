@@ -8,6 +8,7 @@ import Avatar from '@mui/material/Avatar';
 import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 import { useNavigate } from 'react-router-dom';
 import loginimage from '../images/undraw_login.svg'
+import Navbar from '../navbar/Navbar.js'
 
 const service='http://localhost:8000'
 
@@ -35,7 +36,7 @@ function Signup() {
         if(data.token){
             localStorage.setItem('token',data.token);
             localStorage.setItem('hospital',data.hospital)
-            navigate('/BYOA-Insurance_App/users')
+            navigate('/users')
         }
         else{
             window.alert(data.message)
@@ -45,7 +46,10 @@ function Signup() {
 }
 
   return (
+    <>
+  
     <div className='card'>
+      
       
 
      
@@ -80,7 +84,7 @@ function Signup() {
         <Box  sx={{marginLeft:'50px'}}>
         <span style={{ display: 'flex', alignItems: 'center' }}>
   <p style={{ marginRight: '10px' }}>Don't have an account?</p>
-  <a style={{ marginLeft: '5px' }} href='/BYOA-Insurance_App/signup'>Signup</a>
+  <p style={{ marginLeft: '5px' }} onClick={()=>navigate('/signup')}>Signup</p>
 </span>
       
        
@@ -90,7 +94,8 @@ function Signup() {
      
         </Box>
         <Box sx={{marginRight:"120px",display:'flex',justifyContent:"center",width:'200px'}}>
-        <p><a href='/BYOA-Insurance_App/adminlogin'>Adminlogin</a></p>
+        {/* <p><a href='/adminlogin'>Adminlogin</a></p> */}
+        <p style={{cursor:'pointer'}} onClick={ ()=>navigate('/adminlogin')}>Admin login</p>
         </Box>
      
      
@@ -102,6 +107,7 @@ function Signup() {
      
       
     </div>
+    </>
   )
 }
 
