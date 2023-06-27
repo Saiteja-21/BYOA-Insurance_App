@@ -16,7 +16,7 @@ import adminRoute from './routes/admin.js';
 import userRoute from './routes/user.js';
 import requestRoute from './routes/requests.js'
 
-app.use('/',(req,res)=>{
+app.get('/',(req,res)=>{
     res.redirect('https://649ac67818710c00aa68cc66--relaxed-pavlova-bfb430.netlify.app/');
 })
 app.use('/client',clientRoute);
