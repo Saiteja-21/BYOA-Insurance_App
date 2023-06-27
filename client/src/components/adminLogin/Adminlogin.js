@@ -75,7 +75,7 @@ function Signup() {
       <Box  sx={{marginLeft:'50px'}}>
         <span style={{ display: 'flex', alignItems: 'center' }}>
   <p style={{ marginRight: '10px' }}>Don't have an account?</p>
-  <p style={{ marginLeft: '5px' }} onClick={()=>navigate('/signup')}>Signup</p>
+  <p style={{ marginLeft: '5px',cursor:'pointer' }} onClick={()=>navigate('/signup')}>Signup</p>
 </span>
       
        
@@ -85,7 +85,7 @@ function Signup() {
      
         </Box>
         <Box sx={{marginRight:"120px",display:'flex',justifyContent:"center",width:'200px'}}>
-        <p onClick={()=>navigate('/adminlogin')}>Userlogin</p>
+        <p  style={{cursor:'pointer'}} onClick={()=>navigate('/')}>Userlogin</p>
         </Box>
      
       </Box>
