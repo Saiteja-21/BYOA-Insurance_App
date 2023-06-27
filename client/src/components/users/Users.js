@@ -135,7 +135,7 @@ function Users() {
           backgroundColor: 'red',
         },}} onClick={handlelogout}><span>Logout</span></Button>
 
-<input type='text' style={{width:'100%'}} className='search-input' placeholder='search user' onChange={(e)=>setsearch(e.target.value)}/>
+<input type='text' className='search-input' placeholder='search user' onChange={(e)=>setsearch(e.target.value)}/>
 
       {
       token?

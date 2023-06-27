@@ -1,4 +1,3 @@
-
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import AppBar from '@mui/material/AppBar';
@@ -16,13 +15,12 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import {  useNavigate } from 'react-router-dom';
-import logo from '../images/insurance.jpg'
 
 
 const drawerWidth = 240;
 const navItems = ['Home', 'Requests', 'Logout'];
 
-function DrawerAppBar(props) {
+function Navbar(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const navigate = useNavigate();
@@ -34,20 +32,25 @@ function DrawerAppBar(props) {
   
 
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
+    <Box onClick={handleDrawerToggle} 
+    sx={{
+      textAlign: 'center',
+     
+      backgroundSize: 'cover',
+      backgroundRepeat: 'no-repeat',
+      backgroundPosition: 'center',
+      height : "100vh",
+      color : "black"
+    }}
+    >
       <Typography variant="h6" sx={{ my: 2 }}>
-        <img src={logo} alt='no'/>
       </Typography>
       <Divider />
       <List>
         {navItems.map((item) => (
           <ListItem key={item} disablePadding>
            <ListItemButton
-  sx={{ textAlign: 'center' }}
- 
-  
-
->
+  sx={{ textAlign: 'center' }} onClick={()=>handleitemclick(item)}>
               <ListItemText primary={item} />
             </ListItemButton>
           </ListItem>
@@ -59,11 +62,11 @@ function DrawerAppBar(props) {
   const container = window !== undefined ? () => window().document.body : undefined;
   const handleitemclick=(item)=>{
     console.log(item)
-  if(item=='Requests'){
-    navigate('/requests')
-  }
   if(item=='Home'){
     navigate('/adminpage')
+  }
+  if(item=='Requests'){
+    navigate('/requests')
 
   }
   if(item=='Logout'){
@@ -75,7 +78,7 @@ function DrawerAppBar(props) {
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
-      <AppBar component="nav" sx={{ backgroundColor: '#4056A1' }}>
+      <AppBar component="nav" >
         <Toolbar>
           <IconButton
             color="inherit"
@@ -91,7 +94,7 @@ function DrawerAppBar(props) {
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
           >
-            <img src={logo} style={{width:'60px',height:'60px',marginTop:'10px'}} alt='no'/> 
+            {/* <img src={logo} style={{width:'60px',height:'60px',marginTop:'10px'}} alt='no'/>  */}
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {navItems.map((item) => (
@@ -127,12 +130,11 @@ function DrawerAppBar(props) {
   );
 }
 
-DrawerAppBar.propTypes = {
+Navbar.propTypes = {
   /**
    * Injected by the documentation to work in an iframe.
    * You won't need it on your project.
    */
   window: PropTypes.func,
 };
-
-export default DrawerAppBar;
+export default Navbar;
