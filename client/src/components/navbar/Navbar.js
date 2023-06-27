@@ -60,15 +60,15 @@ function DrawerAppBar(props) {
   const handleitemclick=(item)=>{
     console.log(item)
   if(item=='Requests'){
-    navigate('/requests')
+    navigate('/BYOA-Insurance_App/requests')
   }
   if(item=='Home'){
-    navigate('/adminpage')
+    navigate('/BYOA-Insurance_App/adminpage')
 
   }
   if(item=='Logout'){
     localStorage.clear()
-    navigate('/adminlogin')
+    navigate('/BYOA-Insurance_App/adminlogin')
   }
   }
 
