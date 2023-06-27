@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/BYOA-Insurance_App/static/css/main.5fd5eb02.css",
-    "main.js": "/BYOA-Insurance_App/static/js/main.d6fba431.js",
+    "main.js": "/BYOA-Insurance_App/static/js/main.635cb13f.js",
     "static/js/787.c4e7f8f9.chunk.js": "/BYOA-Insurance_App/static/js/787.c4e7f8f9.chunk.js",
     "static/media/insurance.jpg": "/BYOA-Insurance_App/static/media/insurance.ad2f56887926a422e8e4.jpg",
     "static/media/undraw_unlock_re_a558.svg": "/BYOA-Insurance_App/static/media/undraw_unlock_re_a558.354445d7c1e2922ec68bf5a735426f21.svg",
@@ -10,11 +10,11 @@
     "static/media/logo.svg": "/BYOA-Insurance_App/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/BYOA-Insurance_App/index.html",
     "main.5fd5eb02.css.map": "/BYOA-Insurance_App/static/css/main.5fd5eb02.css.map",
-    "main.d6fba431.js.map": "/BYOA-Insurance_App/static/js/main.d6fba431.js.map",
+    "main.635cb13f.js.map": "/BYOA-Insurance_App/static/js/main.635cb13f.js.map",
     "787.c4e7f8f9.chunk.js.map": "/BYOA-Insurance_App/static/js/787.c4e7f8f9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.5fd5eb02.css",
-    "static/js/main.d6fba431.js"
+    "static/js/main.635cb13f.js"
   ]
 }
