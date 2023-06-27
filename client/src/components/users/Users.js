@@ -33,7 +33,7 @@ function Users() {
 
     const handlelogout=()=>{
       localStorage.clear();
-      navigate('/')
+      navigate('/BYOA-Insurance_App/')
     }
     const dialog=()=>{
 
