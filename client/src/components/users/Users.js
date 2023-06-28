@@ -17,6 +17,7 @@ import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
 import Switch from '@mui/material/Switch';
 import TextField from '@mui/material/TextField';
+import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 
 const service='https://insurance-app-1rvb.onrender.com'
 const token=localStorage.getItem('token')
@@ -130,12 +131,20 @@ function Users() {
  
 
   return (
-    <div>
-     <Button variant="contained" sx={{width:'100px', float:'right',marginRight:"20px",marginTop:'20px','&:hover': {
+    <div style={{display:'flex',flexDirection:'column'}}>
+      <Box>
+      <Button variant="contained" sx={{width:'100px', float:'right',marginRight:"20px",marginTop:'20px','&:hover': {
           backgroundColor: 'red',
         },}} onClick={handlelogout}><span>Logout</span></Button>
 
-<input type='text' className='search-input' placeholder='search user' onChange={(e)=>setsearch(e.target.value)}/>
+      </Box>
+  
+        <Box sx={{display:'flex',justifyContent:'center'}}>
+        <input type='text' style={{width:'80%',height:'30px'}} className='search-input' placeholder='search user' onChange={(e)=>setsearch(e.target.value)}/>
+
+
+        </Box>
+
 
       {
       token?
